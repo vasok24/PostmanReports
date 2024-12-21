@@ -26,9 +26,11 @@
 									"    // https://www.chaijs.com/api/bdd",
 									"    pm.expect(jsonData).to.not.have.lengthOf(0);",
 									"});",
-									""
+									"",
+									"pm.execution.setNextRequest(\"Ping\");"
 								],
-								"type": "text/javascript"
+								"type": "text/javascript",
+								"packages": {}
 							}
 						}
 					],
@@ -1129,9 +1131,12 @@
 						"exec": [
 							"pm.test(\"Ping is successful\", function () {",
 							"    pm.response.to.be.success;",
-							"});"
+							"});",
+							"",
+							"pm.execution.setNextRequest(null);"
 						],
-						"type": "text/javascript"
+						"type": "text/javascript",
+						"packages": {}
 					}
 				}
 			],
